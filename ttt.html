@@ -1,0 +1,16 @@
+
+<script> 
+
+  let choices = [
+      'Rock',
+      'Paper',
+      'Scissors'
+  ];
+
+  function computerPlay() {
+  let turnResult = Math.floor(Math.random() * choices.length);
+    return choices[turnResult];  
+  }
+  console.log(computerPlay())
+
+</script>
