@@ -1,16 +1,35 @@
 
 <script> 
 
-  let choices = [
-      'Rock',
-      'Paper',
-      'Scissors'
+  const choices = [
+      'ROCK',
+      'PAPER',
+      'SCISSORS'
   ];
 
+  
+
   function computerPlay() {
-  let turnResult = Math.floor(Math.random() * choices.length);
+    let turnResult = Math.floor(Math.random() * choices.length);
     return choices[turnResult];  
   }
-  console.log(computerPlay())
+  //console.log(computerPlay())
+  function userPlay() {
+      let input = prompt("Rock, Paper, or Scissors?").toUpperCase();
+      return input;
+  }
+  
+ //console.log(userPlay())
 
+  function playRound(playerSelection, computerSelection) {
+     let playerSelection = userPlay();
+     let computerSelection = computerPlay();
+     
+
+
+  //}
+
+  //const playerSelection = userPlay();
+  //const computerSelection = computerPlay();
+  //console.log(playRound(playerSelection, computerSelection));
 </script>
