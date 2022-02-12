@@ -18,24 +18,45 @@
   //userPlay() results in a prompt that asks for user's choice.
   function userPlay() {
       let input = prompt("Rock, Paper, or Scissors?").toUpperCase();
+       if (
+         (input == 'ROCK') || (input == 'PAPER') || (input == 'SCISSORS')
+        ) {
       return input;
+      } else if (
+      (input !== 'ROCK') || (input !== 'PAPER') || (input !=='SCISSORS')
+      ) { 
+        alert("Try again");
+        let input = prompt("Rock, Paper, or Scissors?").toUpperCase();
+         if (
+         (input == 'ROCK') || (input == 'PAPER') || (input == 'SCISSORS')
+          ) {
+         return input;
+          } else {
+            alert("RockPaperScissors....");
+          }
+      }
   }
-  
- //console.log(userPlay())
 
     let computerSelection = computerPlay();
     let playerSelection = userPlay();
 
+
+    //playRound() executes one round of Rock, Paper, Scissors using the User's and computer's choice.
+    //following execution the console will log the winner and the selection of both user and computer.
   function playRound(playerSelection, computerSelection) {
  
       if (playerSelection == computerSelection) {
        return "Tie!";
      } else if (
-      (playerSelection == 'ROCK' && computerSelection == 'SCISSORS') ||
-      (playerSelection == 'PAPER' && computerSelection == 'ROCK') ||
-      (playerSelection == 'SCISSORS' && computerSelection == 'PAPER')
+      (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
+      (playerSelection === 'PAPER' && computerSelection === 'ROCK') ||
+      (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')
       ) {
        return "You win!";
+     } else if (
+      (playerSelection == undefined)
+     ) {
+       return "Your selection was invalid.";
      } else {
        return "You lost :(";
      }
