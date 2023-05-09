@@ -7,62 +7,57 @@
       'SCISSORS'
   ];
 
-  
-  //computerPlay() results in the random choice to be made by computer.
-  function computerPlay() {
-    let turnResult = Math.floor(Math.random() * choices.length);
-    return choices[turnResult];  
+  let computerWins = 0;
+  let playerWins = 0;
+
+  //getcomputerChoice() results in the random choice to be made by computer.
+  function getComputerChoice() {
+    let randomIndex = Math.floor(Math.random() * choices.length);
+    //console.log(getComputerChoice())
+    return choices[randomIndex];
   }
-  //console.log(computerPlay())
+ 
 
   //userPlay() results in a prompt that asks for user's choice.
-  function userPlay() {
-      let input = prompt("Rock, Paper, or Scissors?").toUpperCase();
-       if (
-         (input == 'ROCK') || (input == 'PAPER') || (input == 'SCISSORS')
-        ) {
-      return input;
-      } else if (
-      (input !== 'ROCK') || (input !== 'PAPER') || (input !=='SCISSORS')
-      ) { 
-        alert("Try again");
+  function getUserChoice() {
+      let isValid = false;
+      let userChoice;
+      while (!isValid) {
         let input = prompt("Rock, Paper, or Scissors?").toUpperCase();
-         if (
-         (input == 'ROCK') || (input == 'PAPER') || (input == 'SCISSORS')
-          ) {
-         return input;
-          } else {
-            alert("RockPaperScissors....");
-          }
+        if (input == 'ROCK' || input == 'PAPER' || input == 'SCISSORS') {
+          isValid = true;
+          userChoice = input;
+        } else {
+          alert("Invalid selection. Please try again.");
+        }
       }
+
+      return userChoice;
   }
-
-    let computerSelection = computerPlay();
-    let playerSelection = userPlay();
-
 
     //playRound() executes one round of Rock, Paper, Scissors using the User's and computer's choice.
     //following execution the console will log the winner and the selection of both user and computer.
   function playRound(playerSelection, computerSelection) {
  
       if (playerSelection == computerSelection) {
-       return "Tie!";
+       console.log("Tie!");
      } else if (
       (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
       (playerSelection === 'PAPER' && computerSelection === 'ROCK') ||
       (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')
       ) {
-       return "You win!";
-     } else if (
-      (playerSelection == undefined)
-     ) {
-       return "Your selection was invalid.";
+       console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+       playerWins++;
      } else {
-       return "You lost :(";
+       console.log(`You lost :( ${computerSelection} beats ${playerSelection}`);
+       computerWins++;
      }
   }
 
+  function game() {
+
+  }
+
  console.log(playRound(playerSelection, computerSelection));
- console.log("You chose " + playerSelection + " and the computer chose " + computerSelection);
 
 </script>
