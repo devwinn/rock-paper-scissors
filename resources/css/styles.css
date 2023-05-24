@@ -1,0 +1,37 @@
+body {
+    background-color: lightslategrey;
+    min-height: 95vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+
+#selection-container {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+#rock {
+    background: url('../images/icons8-rock-80.png') aliceblue no-repeat center;
+}
+
+#paper {
+    background: url('../images/icons8-paper-80.png') aliceblue no-repeat center;
+}
+
+.selection {
+    border: 2px solid black;
+    padding: 2px 8px;
+    background-color: aliceblue;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}

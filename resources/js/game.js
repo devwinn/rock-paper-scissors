@@ -7,7 +7,7 @@ const choices = [
 let computerWins = 0;
 let playerWins = 0;
 
-setTimeout(game, 10000);
+//setTimeout(game, 10000);
 
 //getcomputerChoice() results in the random choice to be made by computer.
 function getComputerChoice() {
