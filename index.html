@@ -8,18 +8,29 @@
   <title>RPS Game</title>
   <script src="resources/js/game.js" defer></script>
   <link href="resources/css/styles.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <h1>run game in console to start</h1>
+  <h1 class="title">rock vs paper vs scissors</h1>
+  <div id="start-end">
+    <button class="game-start game-selection">Start Game</button>
+    <button class="game-end game-selection">End Game</button>
+  </div>
+  <div id="game-results">
 
-  <div id="selection-container">
-    <button id="rock" class="selection">Rock</button>
-
-    <button id="paper" class="selection">Paper</button>
-    <button id="scissors" class="selection">Scissors</button>
   </div>
 
+  <div id="selection-container">
+    <button id="rock" class="pick-selection">Rock</button>
+
+    <button id="paper" class="pick-selection">Paper</button>
+    <button id="scissors" class="pick-selection">Scissors</button>
+  </div>
+
+  <!--
   <footer>
     <a target="_blank" href="https://icons8.com/icon/4ZZatudpTru2/rock">Rock</a>
     <span>icon by</span>
@@ -29,12 +40,7 @@
     <span>icon by</span>
     <a target="_blank" href="https://icons8.com">Icons8</a>
   </footer>
-
+-->
 </body>
-<script>
-
-
-
-</script>
 
 </html>
