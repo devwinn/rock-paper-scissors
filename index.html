@@ -1,108 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RPS Game</title>
+  <script src="resources/js/game.js" defer></script>
+  <link href="resources/css/styles.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <h1>Inspect document to see results of game.</h1>
-  <h2>Game will start automatically in 10 seconds</h2>
+  <h1 class="title">rock vs paper vs scissors</h1>
+  <div id="start-end">
+    <button class="game-start game-selection">Start Game</button>
+    <button class="game-end game-selection">End Game</button>
+  </div>
+  <div id="game-results">
 
-  
+  </div>
+
+  <div id="selection-container">
+    <button id="rock" class="pick-selection">Rock</button>
+
+    <button id="paper" class="pick-selection">Paper</button>
+    <button id="scissors" class="pick-selection">Scissors</button>
+  </div>
+
+  <!--
+  <footer>
+    <a target="_blank" href="https://icons8.com/icon/4ZZatudpTru2/rock">Rock</a>
+    <span>icon by</span>
+    <a target="_blank" href="https://icons8.com">Icons8</a>
+    <br>
+    <a target="_blank" href="https://icons8.com/icon/78952/paper">Paper</a>
+    <span>icon by</span>
+    <a target="_blank" href="https://icons8.com">Icons8</a>
+  </footer>
+-->
 </body>
-<script> 
 
-  const choices = [
-      'ROCK',
-      'PAPER',
-      'SCISSORS'
-  ];
-
-  let computerWins = 0;
-  let playerWins = 0;
-
-  setTimeout(game, 10000);
-
-  //getcomputerChoice() results in the random choice to be made by computer.
-  function getComputerChoice() {
-    let randomIndex = Math.floor(Math.random() * choices.length);
-    console.log(`Computer choice: ${choices[randomIndex]}`);
-    return choices[randomIndex];
-  }
- 
-
-  //userPlay() results in a prompt that asks for user's choice.
-  function getUserChoice() {
-      
-    let isValid = false;
-    let userChoice;
-    while (!isValid) {
-      let input = prompt("Rock, Paper, or Scissors?").toUpperCase();
-      if (input == 'ROCK' || input == 'PAPER' || input == 'SCISSORS') {
-        isValid = true;
-        userChoice = input;
-      } else {
-        alert("Invalid selection. Please try again.");
-      }
-    }
-    console.log(`Player choice: ${userChoice}`);
-    return userChoice;
-  }
-
-  // playRound() executes one round of Rock, Paper, Scissors using the User's and computer's choice.
-  // following execution the console will log the winner and the selection of both user and computer.
-  function playRound(playerSelection, computerSelection) {
- 
-    if (playerSelection == computerSelection) {
-      alert("Tie!");
-      console.log("Tie!");
-    } else if (
-    (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
-    (playerSelection === 'PAPER' && computerSelection === 'ROCK') ||
-    (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')
-    ) {
-      alert(`You win this round! ${playerSelection} beats ${computerSelection}`);
-      console.log(`You win this round! ${playerSelection} beats ${computerSelection}`);
-      playerWins++;
-    } else {
-      alert(`You lost this round :( ${computerSelection} beats ${playerSelection}`);
-      console.log(`You lost this round :( ${computerSelection} beats ${playerSelection}`);
-      computerWins++;
-    }
-  }
-
-  function game() {
-    let gameOver = false;
-    alert("Rock, Paper, Scissors.. let the games begin!");
-    console.log("Game starting...\n Best of 5");
-
-    while (!gameOver) {
-      if (computerWins == 3 || playerWins == 3) {
-        gameOver = true;
-        break;
-      } else {
-        let player = getUserChoice();
-        let computer = getComputerChoice();
-        playRound(player, computer);
-      }
-    }
-    if (playerWins > computerWins) {
-      alert("You won the game!")
-      console.log("You won the game!");
-      console.log(`Player wins: ${playerWins} -- Computer wins: ${computerWins}`);
-    } else {
-      alert("You lost the game!");
-      console.log("You lost the game!");
-      console.log(`Player wins: ${playerWins} -- Computer wins: ${computerWins}`);
-    }
-
-    //reset wins to play again
-    computerWins = 0;
-    playerWins = 0;
-
-  }
-
-</script>
 </html>
