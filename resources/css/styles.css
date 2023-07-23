@@ -7,10 +7,6 @@ body {
     font-family: 'Bruno Ace SC', Georgia, 'Times New Roman', Times, serif;
 }
 
-footer {
-    margin-top: auto;
-}
-
 .title {
     font-family: 'Bruno Ace SC', cursive;
     text-align: center;
@@ -25,6 +21,13 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin: 5% auto;
+}
+
+#game-results {
+    background-color: aquamarine;
+    height: 5%;
+    display: flex;
+    justify-content: center;
 }
 
 #selection-container {
@@ -59,6 +62,10 @@ footer {
 
 .game-selection:hover {
     box-shadow: 0 10px 10px rgb(73, 121, 250);
+}
+
+.game-end {
+    display: none;
 }
 
 .pick-selection {
