@@ -55,7 +55,10 @@ function endGame() {
     for (let i = 0; i < selections.length; i++) {
         selections[i].style.backgroundColor = 'aliceblue';
     }
-    resultsContainer.removeChild(resultsContainer.lastElementChild);
+
+    if (resultsContainer.lastElementChild.innerHTML != 'Make a selection') {
+        resultsContainer.removeChild(resultsContainer.lastElementChild);
+    }
     computerWins = 0;
     playerWins = 0;
 }

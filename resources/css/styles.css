@@ -24,11 +24,20 @@ body {
 }
 
 #game-results {
-    background-color: aquamarine;
-    height: 5%;
+    background-color: aliceblue;
+    border: 2px solid black;
+    border-radius: 50%;
+    box-shadow: 0 10px 10px rosybrown;
+    padding: 3% 0;
+    width: 30%;
+    height: 25%;
     display: flex;
+    text-align: center;
+    align-self: center;
     justify-content: center;
 }
+
+
 
 #selection-container {
     width: 100%;
