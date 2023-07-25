@@ -15,19 +15,29 @@
 
 <body>
   <h1 class="title">rock vs paper vs scissors</h1>
-  <div id="start-end">
-    <button class="game-start game-selection">Start Game</button>
-    <button class="game-end game-selection">End Game</button>
+  <div id="header">
+    <div class="score">Player Wins:</div>
+    <div id="start-end">
+      <button class="game-start game-selection">Start Game</button>
+      <button class="game-end game-selection" style="display: none;">End Game</button>
+    </div>
+    <div class="score">Computer Wins:</div>
+
   </div>
+
   <div id="game-results">
     <h3 class="results">'Best of five'<br> You V Computer</h3>
-    <h3 class="results" style="display:none;">Make a selection</h3><!--placeholder p to show results contaienr-->
+    <h3 class="results" style="display:none;">Make a selection</h3>
   </div>
 
   <div id="selection-container">
     <button id="rock" class="pick-selection" value="ROCK">Rock</button>
     <button id="paper" class="pick-selection" value="PAPER">Paper</button>
     <button id="scissors" class="pick-selection" value="SCISSORS">Scissors</button>
+  </div>
+
+  <div id="round-container">
+    <button id="round" class="game-selection" style="display:none;">Next Round</button>
   </div>
 
   <!--
