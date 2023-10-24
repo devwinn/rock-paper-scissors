@@ -26,6 +26,7 @@ selections.forEach(selection => selection.addEventListener('click', userPick));
 
 let isStarted = false;
 let isEnded = true;
+let isPaused = false;
 
 let computerWins = 0;
 let playerWins = 0;
@@ -39,6 +40,7 @@ roundButton.addEventListener('click', nextRound)
 
 function startGame() {
     isStarted = true;
+    isPaused = false;
     console.log(`isStarted = ${isStarted}`)
     startButton[0].style.display = "none";
     endButton[0].style.display = "block";
@@ -49,6 +51,8 @@ function startGame() {
 }
 
 // resets the game, colors schemes, win counts
+
+//!!!!need to rework for additional elements when next round not selected
 function endGame() {
     isStarted = false;
     isEnded = true;
@@ -86,6 +90,10 @@ function nextRound() {
     }
 
     if (!checkWins()) {
+        //!!remove console
+        console.log("nextRound starting");
+        isPaused = false;
+
         // reset selection background
         for (let i = 0; i < selections.length; i++) {
             selections[i].style.backgroundColor = 'aliceblue';
@@ -98,7 +106,10 @@ function nextRound() {
         roundButton.style.display = "none";
 
         startGame();
+        
     } else {
+        //!!remove console
+        console.log("nextRound aborted game over");
         document.body.style.backgroundColor = "green";
         for (let i = 0; i < selections.length; i++) {
             selections[i].style.backgroundColor = 'gold';
@@ -115,7 +126,7 @@ function nextRound() {
 
 // game function is run when user makes a selection
 function userPick(e) {
-    if (isStarted == true) {
+    if (isStarted == true && isPaused == false) {
         for (let i = 0; i < selections.length; i++) {
             if (selections[i].value == e.target.value) {
                 e.target.style.backgroundColor = 'gold';
@@ -205,6 +216,7 @@ function playRound(playerSelection, computerSelection) {
         }
     }
     roundButton.style.display = "block";
+    isPaused = true;
     choice = null;
 }
 
