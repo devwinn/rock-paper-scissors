@@ -1,7 +1,7 @@
 // need to clean up game a bit.
-// to do - add next round button. make front end nicer. 
 // to do - change variable names for easier readability
 // to do - check for bugs. clean up logging
+// to do - remove all console logging
 
 const choices = [
     'ROCK',
@@ -59,6 +59,7 @@ function endGame() {
     console.log(`isEnded = ${isEnded}`)
     endButton[0].style.display = "none";
     startButton[0].style.display = "block";
+    roundButton.style.display = "none";
     resultsText[0].style.display = "block";
     resultsText[1].style.display = "none";
     score[0].style.display = "none";

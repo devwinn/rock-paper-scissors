@@ -51,6 +51,11 @@ body {
     margin: 60px auto;
 }
 
+#round-container {
+    margin-left: auto;
+    margin-right: 10%;
+}
+
 #rock {
     background: url('../images/icons8-rock-80.png') aliceblue no-repeat center;
     font-weight: bolder;
